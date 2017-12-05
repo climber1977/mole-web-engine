@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50612
 File Encoding         : 65001
 
-Date: 2017-12-05 14:44:37
+Date: 2017-12-05 16:32:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1015,7 +1015,7 @@ INSERT INTO `wb_params` VALUES ('8', 'loginUrl', '/myweb/my/page_user_login_1.ht
 INSERT INTO `wb_params` VALUES ('9', 'useSelectCahce', '1', '0', '查询缓存');
 INSERT INTO `wb_params` VALUES ('10', 'securityKey', '123456', '2', '后台请求时的安全秘钥');
 INSERT INTO `wb_params` VALUES ('11', 'useColumnPrivilege', '1', '0', '是否启用字段权限控制');
-INSERT INTO `wb_params` VALUES ('12', 'testServerUrl', 'http://mole.com:8080', '2', '从其他服务器获取数据时的测试地址');
+INSERT INTO `wb_params` VALUES ('12', 'testServerUrl', 'http://test.mole.com:8080', '2', '从其他服务器获取数据时的测试地址');
 INSERT INTO `wb_params` VALUES ('13', 'useServerPrivilege', '1', '0', '是否启用服务验证权限');
 INSERT INTO `wb_params` VALUES ('14', 'refreshResSeconds', '5', '0', '配置表整体刷新的时间差，例如wb_params、wb_res、wb_res_role_relation');
 INSERT INTO `wb_params` VALUES ('15', 'refreshTablesSeconds', '5', '0', 'wb_res表的刷新秒数');
