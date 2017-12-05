@@ -1,0 +1,79 @@
+<center><h3 class="page-title">DIV弹出窗口</h3></center>
+&nbsp&nbsp1、动态获取页面，在DIV中显示
+<hr>
+<!-- 
+<div id="myDivDialog" class="modal" tabindex="-1" data-focus-on="input:first" style="display: none; margin-top: -10px;" aria-hidden="true">
+ -->
+<div id="myDivDialog" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="heigth: 1320px;">
+	<!-- 
+		<div id="show" class="modal-body form" style="width: 1040px;"></div>
+	 -->
+		<div id="show" class="modal-body" style="width: 1600px;"></div>
+</div>
+<br>
+<div id="result" style="padding: 10px;">result</div>
+<div class="form-horizontal" role="form">
+	<div class="form-body">
+		<div class="form-group">			
+			<div class="col-md-12">
+				<div class="pull-right">
+					<!-- 
+						<a id="mySelectedItems1" class="btn blue" data-target="#myDivDialog" data-toggle="modal" style="display:inline-block">选择人员</a>
+					 -->
+					<a id="mySelectedItems1" class="btn blue"  style="display:inline-block">选择人员</a>					
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>
+ <script type="text/javascript">
+    var init = false;
+ 	function selectPerson(){ 		
+ 		if(!init){
+ 			myajaxWithDataType("config_db_get_user2?dbs=hr&rtype=1&act=page",  {}, successCallback, failedCallback, "html");
+ 		}else{
+ 			//$('#myDivDialog').modal('show')
+ 			$('#myDivDialog').modal({width:"1600px", modalOverflow:true})
+ 		}
+ 		
+ 		init = true;
+	}
+
+ 	function successCallback(result){		
+		 var show = document.getElementById("show");
+		 $('#show').html(result);
+		 //show.innerHTML = result;		//不执行jQuery(document).ready
+		//$('#myDivDialog').modal('show')
+		$('#myDivDialog').modal({width:"1600px", modalOverflow:true})
+	}
+	function failedCallback(result){
+	}
+ 	jQuery(document).ready(function() {	 
+ 		$("#mySelectedItems1").click(selectPerson);
+ 		
+	});	
+ 	function onSelectedItems(result){	
+ 		var line = "";
+		if(result.length == 0){
+			line = "没有选中任何元素";
+		} else {
+			line  = "[";
+			for(i=0; i<result.length; i++){
+				line  += "[";
+				if(i!=0){
+					line  += ",";
+				}
+				for(j=0; j<result[i].length; j++){
+					if(j != 0){
+						line  += ",";
+					}
+					line  += result[i][j];
+				}
+				line  += "]";
+			}
+			line  += "]";
+		}
+		//alert(line);
+		$('#result').html(line);
+	}
+</script>

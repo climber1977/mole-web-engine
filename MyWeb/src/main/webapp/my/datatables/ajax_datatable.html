@@ -1,0 +1,71 @@
+<center><h3 class="page-title">ajax请求展示datatable的数据</h3></center>
+&nbsp&nbsp1、在MyWeb\src\main\webapp\my\datatables\ajax_datatable.html
+文件中直接写好datatables的表格html代码。
+<br>
+&nbsp&nbsp2、在wb_page_datatables表中配置uuid为ajax_datatable_get_user的条目。
+<br>
+&nbsp&nbsp3、本例使用wb_execute_sql表中配置的sql，还需配置wb_page_datatables表的executeid字段。
+<br>
+&nbsp&nbsp4、本例中工号的大字体，是在sql中直接生成的数据效果。
+<br>
+&nbsp&nbsp5、通过js代码向后台发起请求，获取数据在前台展示。
+<hr>
+<table class="table table-striped table-bordered table-hover table-checkable" id="datatable_ajax">
+    <thead>
+        <tr role="row" class="heading">
+            <th width="10%">
+                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" class="group-checkable" data-set="#sample_2.checkboxes" />
+                    <span></span>
+                </label>
+            </th>
+            <th width="10%">id</th>
+            <th width="15%"> 工号 </th>
+            <th width="10%">姓名</th>            
+            <th width="15%"> 中文姓名 </th>
+            <th width="10%"> 英文姓名  </th>
+            <th width="10%"> 状态 </th>
+        </tr>
+    </thead>
+    <tbody> </tbody>
+</table>
+<lc:portal jsonDesc="datatables_import.json"></lc:portal>
+<script type="text/javascript">
+	var dt;
+   jQuery(document).ready(function() {
+	    dt = TableDatatablesAjax.init("#datatable_ajax", "ajax_datatable_get_user?dbs=hr11");
+	    console.log(dt);
+	});   
+   function onGetSelectedIds(){
+		var result = dt.getSelectedItemIds();
+		if(result.length == 0){
+			alert("没有选中任何元素");
+		} else {
+			alert(result);
+		}
+	}
+   function onGetSelectedItems(){
+		var result = dt.getSelectedItems();
+		if(result.length == 0){
+			alert("没有选中任何元素");
+		} else {
+			alert(result);
+		}
+	}
+</script>
+<br>
+<div class="form-horizontal" role="form">
+	<div class="form-body">
+		<div class="form-group">			
+			<div class="col-md-12">
+				<div class="pull-right">
+					<button id="mycancel" name="mycancel" type="button" class="btn blue" onclick="alert('确实要关闭吗?')">关闭</button>
+					<button id="mySelectedIds" name="mySelectedIds" type="button" class="btn blue" onclick="onGetSelectedIds()">取得选中ID</button>
+					<button id="mySelectedItems" name="mySelectedItems" type="button" class="btn blue" onclick="onGetSelectedItems()">取得选中数据</button>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>
+
+   

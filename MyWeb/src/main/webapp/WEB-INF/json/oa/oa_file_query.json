@@ -1,0 +1,31 @@
+{
+    "name":"portal",
+    "content":"groups",
+    "lablecolumn":2,
+    "itemcolumn":3,
+    "templet":"default_portal.html",
+    "child":{
+        "child":[                     
+            {
+                "name":"groups",
+                "content":"elements",               
+                "templet":"default_groups.html",
+                "child":[
+                	{
+                        "lable":"附件名称1",
+                        "name":"imagefilename1",
+                        "templet":"default_text.html",
+                        "cssClass":"param"
+                    },  
+                    {
+                        "lable":"附件名称2",
+                        "name":"imagefilename2",
+                        "templet":"default_text.html",
+                        "cssClass":"param"
+                    },    
+                ]
+            }
+        ]
+    }
+}
+

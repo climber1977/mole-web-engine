@@ -1,0 +1,25 @@
+
+{
+    "name":"portal",
+    "content":"groups",
+    "lablecolumn":2,
+    "itemcolumn":3,
+    "templet":"default_portal.html",
+    "child":{
+        "child":[
+            {
+                "name":"groups",
+                "content":"elements",
+                "templet":"default_groups.html",
+                "child":[
+                    {
+                        "lable":"流程编号",
+                        "name":"requestmark",
+                        "templet":"default_text.html",
+                        "cssClass":"param"
+                    },                   
+                ]
+            },
+        ]
+    }
+}

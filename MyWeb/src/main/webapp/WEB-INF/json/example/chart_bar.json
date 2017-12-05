@@ -1,0 +1,12 @@
+{
+    "id":"chart_bar",
+    "height":"500px",
+    "title":"月平均气温",
+    "yTitle":"温度 (°C)",
+    "subtitle":"来源: WorldClimate.com",
+    "templet":"default_chart_curve.html",
+    "tooltip":"{valueSuffix: '°C'}", 
+    "func":"barChartAjax",
+    "uuid":"curve_chart_climate",
+    "dbs":"wt"
+}

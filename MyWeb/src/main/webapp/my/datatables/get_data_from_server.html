@@ -1,0 +1,33 @@
+<center><h3 class="page-title">模拟从其他服务器获取数据</h3></center>
+&nbsp&nbsp1、参见MyController::getDataFromServer
+<br>
+&nbsp&nbsp2、需在wb_authorized_server表中配置允许的IP和秘钥。
+<hr>
+<table class="table table-striped table-bordered table-hover table-checkable" id="datatable_ajax">
+    <thead>
+        <tr role="row" class="heading">
+            <th width="10%">
+                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                    <input type="checkbox" class="group-checkable" data-set="#sample_2 .checkboxes" />
+                    <span></span>
+                </label>
+            </th>
+            <th width="10%">id</th>
+            <th width="15%"> 工号 </th>
+            <th width="10%">姓名</th>            
+            <th width="15%"> 中文姓名 </th>
+            <th width="10%"> 英文姓名  </th>
+            <th width="10%"> 状态 </th>
+        </tr>
+    </thead>
+    <tbody> </tbody>
+</table>
+<lc:portal jsonDesc="datatables_import.json"></lc:portal>
+
+<script type="text/javascript">
+   jQuery(document).ready(function() {
+	   dt = TableDatatablesAjax.init2("#datatable_ajax", "/myweb/get_data_from_server");
+	   console.log(dt);
+	});
+</script>
+   

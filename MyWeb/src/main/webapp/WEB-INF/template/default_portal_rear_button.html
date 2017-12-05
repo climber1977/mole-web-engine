@@ -1,0 +1,28 @@
+<script type="text/javascript">
+   function onClose(){
+	   alert("关闭窗口");
+	   $("#myDivDialog").modal("hide");
+   }
+   function onOk(){
+		var result = {datatableUuid}.getSelectedItems();
+		if(result.length == 0){
+			alert("没有选中任何元素");
+		} else {
+			alert(result);
+		}
+		$("#myDivDialog").modal("hide");
+	}
+</script>
+<br>
+<div class="form-horizontal" role="form">
+	<div class="form-body">
+		<div class="form-group">			
+			<div class="col-md-12">
+				<div class="pull-right">
+					<button id="mycancel" name="mycancel" type="button" class="btn blue" onclick="onClose()">关闭</button>
+					<button id="mySelectedItems" name="mySelectedItems" type="button" class="btn blue" onclick="onOk()">确定</button>
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>

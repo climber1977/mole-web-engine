@@ -1,0 +1,12 @@
+{
+    "id":"chart_column2",
+    "height":"500px",
+    "title":"月考勤统计",
+    "yTitle":"小时",
+    "subtitle":"",
+    "templet":"default_chart_curve_no_ready.html",
+    "tooltip":"{valueSuffix: '小时'}",
+    "func":"columnChart2Ajax",
+    "uuid":"erp_qyxxh_attendance_column",
+    "dbs":"erp"
+}

@@ -1,0 +1,12 @@
+<div id="{id}" style="height:{height};"></div>
+<script type="text/javascript">	
+	function query(fverifyparam){
+		if(fverifyparam != null){
+			if(!fverifyparam()){
+				return;
+			}
+		}
+		var tooltip= {tooltip};
+		{func}('{id}', tooltip, '{title}', '{yTitle}', '{subtitle}', '{uuid}', '{dbs}');
+	}
+</script>

@@ -1,0 +1,19 @@
+<li class="{cssclass}">
+	<a class="second-menu" href="{url}">
+	<i class="fa fa-cogs"></i>
+	<span class="title">{caption} </span>
+	<span class="arrow open">
+	</span>
+	<span class="selected"></span>
+	</a>
+	<ul class="sub-menu  always-open"  style="display: {style};">
+		{content}
+	</ul>
+</li>
+<script type="text/javascript">
+  	jQuery(document).ready(function() {
+		menu.init();
+		//模拟点击三级菜单
+	   	$('.sub-menu').find('li:first').find('a:first')[0].click()			   
+	});
+</script>  

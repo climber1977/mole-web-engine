@@ -1,0 +1,8 @@
+{
+    "name":"tree",
+    "uuid":"ajax_tree_get_department",
+    "root":1,
+    "dbs":"wt",
+    "url":"ajax_tree_get_department?dbs=wt&&rtype=2",
+    "templet":"default_tree.html"
+}

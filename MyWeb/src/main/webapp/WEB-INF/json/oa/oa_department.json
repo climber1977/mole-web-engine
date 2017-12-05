@@ -1,0 +1,32 @@
+{
+    "name":"table",
+    "content":"tr_content",
+    "uuid":"oa_department_query",
+    "dataUrl":"oa_department_query?dbs=oa&showColumn=1&subact=sql",
+    "templet":"default_table.html",
+    "displayquery":"inline-block",
+    "displayimport":"none",
+    "displayexport":"none",
+    "child":[       
+        {
+            "th_content":"部门id",
+            "width":"5%",
+            "templet":"default_table_th.html"
+        },
+        {
+            "th_content":"部门编码",
+            "width":"5%",
+            "templet":"default_table_th.html"
+        },        
+        {
+            "th_content":"部门全路径",
+            "width":"50%",
+            "templet":"default_table_th.html"
+        }
+         {
+            "th_content":"部门负责人",
+            "width":"8%",
+            "templet":"default_table_th.html"
+        }, 
+    ]
+}

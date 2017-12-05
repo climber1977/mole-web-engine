@@ -1,0 +1,37 @@
+﻿{
+    "name":"portal",
+    "child":[
+        {
+            "lable":"用户ID",
+            "id":"securityid",
+            "name":"Id",
+            "templet":"default_text.html",
+            "value":"id",
+            "cssClass":"vajax"
+        },
+        {
+            "lable":"账号",
+            "id":"securityAccount",
+            "name":"Account",
+            "templet":"default_text.html",
+            "value":"Account",
+            "cssClass":"vajax"
+        },
+        {
+            "id":"securityQuery",
+            "name":"query",
+            "templet":"default_button.html",
+            "color":"blue",
+            "onClick":"onClick='alert(\"hello\")'",
+            "caption":"查询"
+        },
+        {
+        	"id":"securityAdd",
+            "name":"add",
+            "templet":"default_button.html",
+            "color":"blue",
+            "onClick":"onClick='alert(\"hello\")'",
+            "caption":"添加"           
+        }        
+    ]
+}

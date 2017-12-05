@@ -1,0 +1,18 @@
+<center><h3 class="page-title">html源码中内嵌全动态页</h3></center>
+<hr>
+<br><div id="show"> show </div>
+<br>
+
+ <script type="text/javascript">
+ 	function successCallback(result){		
+		//var show = document.getElementById("show");
+		//show.innerHTML = result;		//不执行jQuery(document).ready
+		$('#show').html(result);
+	}
+	function failedCallback(result){
+	}
+ 	jQuery(document).ready(function() {	  
+	   myajaxWithDataType("config_db_get_user?dbs=hr&rtype=1&act=page",  {}, successCallback, failedCallback, "html");
+	});	
+</script>
+

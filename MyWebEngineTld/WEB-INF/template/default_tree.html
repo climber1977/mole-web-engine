@@ -1,0 +1,24 @@
+<div class="page-sidebar-wrapper">
+	<div class="portlet red-pink box">
+		<div class="portlet-title">
+			<div class="caption">
+				<i class="fa fa-cogs"></i>Ajax Tree with Drag & Drop </div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse"> </a>
+				<a href="#portlet-config" data-toggle="modal" class="config"> </a>
+				<a href="javascript:;" class="reload"> </a>
+				<a href="javascript:;" class="remove"> </a>
+			</div>
+		</div>
+		<div class="portlet-body">
+			<div id="t{uuid}" class="tree-demo"> </div>
+		</div>
+	</div>
+</div>
+		
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		t{uuid} = UITree.init("#t{uuid}", "{url}", {root});
+		console.log(t{uuid});
+});
+</script>

@@ -1,0 +1,33 @@
+<center><h3 class="page-title">ajax请求展示树形组件</h3></center>
+&nbsp&nbsp1、在MyWeb\src\main\webapp\my\jstree\ajax_tree.html
+文件中直接写好tree的html代码。
+<br>
+&nbsp&nbsp2、在wb_execute_sql表中配置uuid为ajax_tree_get_department的条目。
+<br>
+&nbsp&nbsp3、节点样式，是在sql中用'fa fa-folder icon-lg icon-state-info' as icon 字段实现的。
+<hr>
+ <div class="page-sidebar-wrapper">            
+     <div class="portlet red-pink box">
+         <div class="portlet-title">
+             <div class="caption">
+                 <i class="fa fa-cogs"></i>Ajax Tree with Drag & Drop </div>
+             <div class="tools">
+                 <a href="javascript:;" class="collapse"> </a>
+                 <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+                 <a href="javascript:;" class="reload"> </a>
+                 <a href="javascript:;" class="remove"> </a>
+             </div>
+         </div>
+         <div class="portlet-body">
+             <div id="tree_4" class="tree-demo"> </div>
+            
+         </div>
+     </div>
+</div>
+                         
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+	    dt = UITree.init("#tree_4", "ajax_tree_get_department?dbs=wt", 1);
+	    console.log(dt);
+	});
+</script>

@@ -1,0 +1,56 @@
+<script type="text/javascript">
+function refresh(cachecls){
+	params = getParams();
+	if("undefined" == typeof cachecls){
+		cachecls = "";
+	}
+	url = "uuid_refresh?act=recache&cachecls=" + cachecls;
+	myajax(url, params, function (result){		
+		if(result.ret == 0){
+			alert("刷新成功");
+		} else {
+			alert("刷新失败");
+		}
+	}, function(x, e){
+		alert(e);
+	} )
+}
+</script>
+<center><h3 class="page-title">刷新配置缓存</h3></center>
+<a href="#" onclick="refresh()">全部刷新</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.system.SysParams')">刷新系统参数</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.resmanager.MenuManager')">刷新菜单</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.security.MenuPrivileges')">刷新菜单权限</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.dbapp.ExecuteSqlManager')">刷新执行的sql</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.dbapp.ExecutePageDatablesManager')">刷新表配置</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.dbapp.ExecutePageDatablesDescManager')">刷新表描述配置</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.dbapp.ExecuteWhereSqlManager')">刷新Where条件配置</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.resmanager.PageManager')">刷新页配置表</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.resmanager.PagePortManager')">刷新portal配置表</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.resmanager.PageChartManager')">刷新图表配置表</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.resmanager.PagePortItemManager')">刷新portal的元素配置表</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.resmanager.PagePortItemSelectItemManager')">刷新portal的下拉框配置表</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.security.Resource')">刷新资源</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.security.RolePrivileges')">刷新角色权限</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.security.UserPrivileges')">刷新用户权限</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.resmanager.ButtonManager')">刷新按钮管理器</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.security.ButtonPrivileges')">刷新按钮权限</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.security.ColumnPrivileges')">刷新数据库表列权限</a>&nbsp;&nbsp;
+<a href="#" onclick="refresh('com.mole.webengine.security.CompentPrivileges')">刷新组件权限</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.net.RouterTable')">刷新路由表</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.security.UserRoleRelation')">刷新角色用户关系</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.dbapp.ImportConfigManager')">刷新导入配置</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.security.AuthorizedServerPrivileges')">刷新服务器权限配置</a><br><br>
+
+<a href="#" onclick="refresh('com.mole.webengine.resmanager.I18n')">刷新国际化字典</a><br><br>

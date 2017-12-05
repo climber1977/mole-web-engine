@@ -1,0 +1,12 @@
+{
+    "id":"chart_pie",
+    "height":"500px",
+    "title":"月平均气温",
+    "yTitle":"温度 (°C)",
+    "subtitle":"来源: WorldClimate.com",
+    "templet":"default_chart_curve.html",
+    "tooltip":"{ formatter: function () { return this.y > 1 ? '' + this.point.name + ': ' + this.y + '%'  : null; } }",
+    "func":"pieChartAjax",
+    "uuid":"pie_chart_climate",
+    "dbs":"wt"
+}

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<c3p0-config>
+	<named-config name="web_engine">
+        <property name="user">root</property>  
+        <property name="password"></property>  
+        <property name="driverClass">com.mysql.jdbc.Driver</property>  
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/web_engine?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull</property>  
+        <!-- 连接池初始化时建立的连接数 默认值是3 -->  
+        <property name="initialPoolSize">1</property>  
+        <!-- 连接的最大空闲时间  单位秒 默认是0-代表永远不会断开连接  超过设定时间的空闲连接将会断开 -->  
+        <property name="maxIdleTime">30</property>  
+        <!-- 连接池中拥有的最大连接数 默认值为15个 -->  
+        <property name="maxPoolSize">2</property>  
+        <!-- 连接池中保持的最小连接数  默认值为3个-->  
+        <property name="minPoolSize">1</property>  
+        <!-- 将连接池的连接数保持在minpoolsize 必须小于maxIdleTime设置  默认值为0代表不处理  单位秒 -->  
+        <property name="maxIdleTimeExcessConnections">15</property>  
+    </named-config>
+    <named-config name="web_test">
+        <property name="user">root</property>  
+        <property name="password"></property>  
+        <property name="driverClass">com.mysql.jdbc.Driver</property>  
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/web_test?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull</property>  
+        <!-- 连接池初始化时建立的连接数 默认值是3 -->  
+        <property name="initialPoolSize">1</property>  
+        <!-- 连接的最大空闲时间  单位秒 默认是0-代表永远不会断开连接  超过设定时间的空闲连接将会断开 -->  
+        <property name="maxIdleTime">30</property>  
+        <!-- 连接池中拥有的最大连接数 默认值为15个 -->  
+        <property name="maxPoolSize">2</property>  
+        <!-- 连接池中保持的最小连接数  默认值为3个-->  
+        <property name="minPoolSize">1</property>  
+        <!-- 将连接池的连接数保持在minpoolsize 必须小于maxIdleTime设置  默认值为0代表不处理  单位秒 -->  
+        <property name="maxIdleTimeExcessConnections">15</property>  
+    </named-config>
+    
+</c3p0-config>  

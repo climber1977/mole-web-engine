@@ -1,0 +1,20 @@
+<center><h3 class="page-title">权限控制说明</h3></center>
+&nbsp&nbsp1、使用sunwukong或zhubajie登录，会看到不同的菜单、按钮、
+datatable的列（如果列显示，但无权限，则列的值显示为*******）。
+<br>
+权限控制使用黑名单机制，即如果不配置，则所有用户都有权限，否则只有配置了的用户才有权限。
+<br>
+&nbsp&nbsp2、wb_user用户表，wb_role角色表，wb_user_role_relation用户角色表。
+<br>
+&nbsp&nbsp3、wb_menu菜单表。
+<br>
+&nbsp&nbsp4、wb_res资源表（即资源即url地址），wb_res_role_relation资源角色关系表，
+wb_res_user_relation资源用户关系表，特殊用途，避免要给一个用户加权限，必须创建一个角色。
+<br>
+&nbsp&nbsp5、wb_button按钮表，wb_button_role_relation按钮角色关系表，指导角色级，避免按钮权限太零散。
+<br>
+&nbsp&nbsp6、wb_column_role_relation数据库表的列和角色关系表，
+oracle不能取到表名，则不同表的相同字段，具有相同权限。
+<br>
+&nbsp&nbsp7、wb_compent_role_relation json文件中的html组件和角色的关系表。
+<hr>

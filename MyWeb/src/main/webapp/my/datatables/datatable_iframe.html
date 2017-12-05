@@ -1,0 +1,25 @@
+<center><h3 class="page-title">Iframe</h3></center>
+&nbsp&nbsp1、配置host 127.0.0.1 test.mole.com
+<br>
+&nbsp&nbsp2、在wb_params增加id为12的配置
+<br>
+&nbsp&nbsp3、iframe嵌入的地址是http://test.mole.com:8080/myweb/my/datatables/pop_dialog.html?uuid=datatable_iframe&title=人员选择器，单选框
+<br>
+&nbsp&nbsp4、PHP中有类似的模拟代码
+<hr>
+
+<div id="result" style="padding: 10px;">result</div>
+<iframe id="myframe" frameborder=0 width=1200 height=700 marginheight=0 marginwidth=0 scrolling=no src=""></iframe>
+
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		$('#myframe')[0].src=testServerUrl + "/myweb/my/datatables/pop_dialog.html?uuid=datatable_iframe&title=人员选择器，单选框";	
+	});
+ 	function dailogCallback(result){
+		if(result.length == 0){
+			result = "没有选中任何元素";
+		}
+		 $('#result').html(result);	
+	} 	
+ 	var messenger = new Messenger('parent', 'popDialog', dailogCallback);
+</script>	

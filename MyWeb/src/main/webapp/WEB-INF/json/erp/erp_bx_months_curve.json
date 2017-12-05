@@ -1,0 +1,12 @@
+{
+    "id":"chart_curve",
+    "height":"元",
+    "title":"每月报销统计",
+    "yTitle":"元",
+    "subtitle":"",
+    "templet":"default_chart_curve.html",
+    "tooltip":"{valueSuffix: '°C'}",
+    "func":"curveChartAjax",
+    "uuid":"erp_bx_months_curve",
+    "dbs":"erp"
+}

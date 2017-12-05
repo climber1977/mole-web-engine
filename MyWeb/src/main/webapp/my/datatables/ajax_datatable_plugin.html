@@ -1,0 +1,40 @@
+<center><h3 class="page-title">通过扩展的插件返回datatable的数据</h3></center>
+&nbsp&nbsp1、数据的获取过程请参加“web-test-plugin”工程的com.mole.plugin.MyTestPlugin的queryUsers方法。
+<br>
+&nbsp&nbsp2、插件的实现方式。
+<br>
+&nbsp&nbsp&nbsp&nbsp1) 插件必须放到MyWeb\src\main\webapp\WEB-INF\plugin目录。
+<br>
+&nbsp&nbsp&nbsp&nbsp2) 插件函数实现参数必须是String uuid, HttpServletRequest request,HttpServletResponse response, boolean security, MyJDBC db。
+<br>
+&nbsp&nbsp&nbsp&nbsp3) 插件函数符合函数的命名规范即可。
+<br>
+&nbsp&nbsp&nbsp&nbsp4) 必须在插件包的根目录提供packet.cfg文件，该文件描述，插件中可调用的方法。#表示注释，具体描述如下
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbspuuid:"唯一标示",class:"类",funname:"函数"}
+<br>
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp例如:{uuid:"my_test_plugin_queryUsers",class:"com.mole.plugin.MyTestPlugin",funname:"queryUsers"}
+
+<br>
+<hr>
+<table class="table table-striped table-bordered table-hover table-checkable" id="datatable_ajax">
+    <thead>
+        <tr role="row" class="heading">           
+            <th width="10%">id</th>
+            <th width="15%"> 工号 </th>
+            <th width="10%">姓名</th>            
+            <th width="15%"> 中文姓名 </th>
+            <th width="10%"> 英文姓名  </th>
+        </tr>
+    </thead>
+    <tbody> </tbody>
+</table>
+<lc:portal jsonDesc="datatables_import.json"></lc:portal>
+
+<script type="text/javascript">
+   jQuery(document).ready(function() {
+	    dt = TableDatatablesAjax.init3("#datatable_ajax", getRequestUrl() + "my_test_plugin_queryUsers?dbs=hr&act=plugin");
+	    console.log(dt);
+	});
+</script>
+   

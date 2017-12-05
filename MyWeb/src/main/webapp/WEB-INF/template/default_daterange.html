@@ -1,0 +1,14 @@
+<label class="col-md-{lablecolumn} control-label">{lable}:</label>
+<div class="col-md-{itemcolumn}">
+<div class="input-group input-daterange my-daterange-input-large" data-date="">
+<input name="{name}_from" type="text" class="{cssClass} {style} form-control " data-date-format="yyyy-mm-dd">
+<span class="input-group-addon"> to </span>
+<input name="{name}_to" type="text" class="{cssClass} {style} form-control " data-date-format="yyyy-mm-dd"> </div>	
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function() {    
+		ComponentsDateTimePickers.init(); 
+		cleanItemValue2("{name}_from");
+		cleanItemValue2("{name}_to");
+	});	
+</script>

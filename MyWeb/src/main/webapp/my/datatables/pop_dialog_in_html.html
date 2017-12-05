@@ -1,0 +1,40 @@
+<center><h4 id="pagetitle" class="page-title">Dialog弹出窗口</h4></center>
+&nbsp&nbsp1、配置host 127.0.0.1 test.mole.com
+<br>
+&nbsp&nbsp2、在wb_params增加id为12的配置
+<br>
+&nbsp&nbsp3、iframe嵌入的地址是http://test.mole.com:8080/myweb/my/datatables/pop_dialog.html?uuid=datatable_iframe&title=人员选择器，单选框
+<br>
+&nbsp&nbsp4、PHP中有类似的模拟代码
+<hr>
+<div id="result" style="padding: 10px;">result</div>
+<div class="form-horizontal" role="form">
+	<div class="form-body">
+		<div class="form-group">			
+			<div class="col-md-12">
+				<div class="pull-right">
+					<button id="selectPseron" name="selectPseron" type="button" class="btn blue" onclick="selectPerson()">选择人员</button>					
+				</div>
+			</div>			
+		</div>
+	</div>
+</div>
+ <script type="text/javascript">
+ 	function dailogCallback(result){
+		if(result.length == 0){
+			result = "没有选中任何元素";
+		}
+		 $('#result').html(result);	
+	} 		
+ 	function selectPerson(){
+ 		var uuid = getQueryStringFromUrl(curThirdMenuUrl, "uuid");
+		var title = getQueryStringFromUrl(curThirdMenuUrl, "title"); 
+ 		var url = testServerUrl + "/myweb/my/datatables/pop_dialog.html";
+ 		url = url + "?uuid=" + uuid;
+ 		url = url + "&title=" + title;
+ 		openWindow(url, 1000, 650, dailogCallback);	
+	}
+ 	
+ 	var messenger = new Messenger('parent', 'popDialog', dailogCallback);
+ 	
+</script>

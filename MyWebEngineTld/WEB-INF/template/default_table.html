@@ -1,0 +1,30 @@
+{import}
+<div class="table-container">
+	<div class="table-actions-wrapper">
+		<span> </span>
+		<button type="button" class="btn green" onclick='t{uuid}_reload()'>查询</button>
+		<a class="btn green" data-target="#importwin" data-toggle="modal">导入</a>			
+		<button type="button" class="btn green" onclick='exportdb()'>导出</button>
+	</div> 
+	<table class="table table-striped table-bordered table-hover table-checkable" id="{uuid}">			
+		<thead>
+		<tr role="row" class="heading">
+			{tr_content}
+		</tr>
+		</thead>
+	<tbody> </tbody>
+	</table>
+	</div>  
+</div>  
+<script type="text/javascript">
+	jQuery(document).ready(function() {
+		var sorting=new Array({sorting});		
+		t{uuid} =  TableDatatablesAjax.init("#{uuid}","{dataUrl}", sorting);
+	});
+	function t{uuid}_reload(){
+		t{uuid}.getDataTable().ajax.reload();
+	}
+	function exportdb(){
+		downLoad("{exportUrl}");
+	}
+</script>

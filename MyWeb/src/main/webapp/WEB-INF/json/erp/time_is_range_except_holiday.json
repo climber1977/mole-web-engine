@@ -1,0 +1,41 @@
+{
+    "name":"portal",
+    "content":"groups",
+    "lablecolumn":1,
+    "itemcolumn":3,
+    "templet":"default_portal.html",
+    "child":{
+        "lablecolumn":1,
+        "itemcolumn":3,
+        "child":[
+            
+            {
+                "name":"elements2",
+                "content":"elements",
+                "templet":"default_groups.html",
+                "child":[
+                    {
+                       
+                        "lable":"订购时间",
+                        "name":"startTime",
+                        "style":"form_datetime",
+                        "templet":"default_datetimepicker.html",
+                    	"cssClass":"param"
+                    },
+                     {
+                        "lable":"大于x小时",
+                        "name":"rangeStartHour",
+                        "templet":"default_text.html",
+                    	"cssClass":"param"
+                    },
+                     {
+                        "lable":"小于x小时",
+                        "name":"rangeEndHour",
+                        "templet":"default_text.html",
+                    	"cssClass":"param"
+                    },
+                ]
+            }
+        ]
+    }
+}

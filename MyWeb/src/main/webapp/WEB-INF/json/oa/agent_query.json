@@ -1,0 +1,57 @@
+{
+    "name":"portal",
+    "content":"groups",
+    "lablecolumn":1,
+    "itemcolumn":3,
+    "templet":"default_portal.html",
+    "child":{
+        "lablecolumn":2,
+        "itemcolumn":4,
+        "child":[
+            {
+                "name":"groups",
+                "content":"elements",
+                "lablecolumn":2,
+                "itemcolumn":4,
+                "templet":"default_groups.html",
+                "child":[
+                    {
+                        "lable":"代理人姓名",
+                        "name":"AGENTERName",
+                        "templet":"default_text.html",
+                        "cssClass":"param"
+                    },
+                    {
+                        "lable":"代理人邮箱",
+                        "name":"AGENTERemail",
+                        "templet":"default_text.html",
+                        "cssClass":"param"
+                    },
+                    
+                ]
+            },
+            {
+                "name":"groups",
+                "content":"elements",
+                "lablecolumn":2,
+                "itemcolumn":4,
+                "templet":"default_groups.html",
+                "child":[
+                    
+                    {
+                        "lable":"被代理人姓名",
+                        "name":"BEAGENTERName",
+                        "templet":"default_text.html",
+                        "cssClass":"param"
+                    }
+                    {
+                        "lable":"被代理人邮箱",
+                        "name":"BEAGENTERemail",
+                        "templet":"default_text.html",
+                        "cssClass":"param"
+                    },
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+<label class="col-md-{lablecolumn} control-label">{lable}:</label>
+<div class="col-md-{itemcolumn}">
+	<div class="input-group">
+		<input name="{name}" type="text" class="{cssClass} form-control timepicker timepicker-24 my-timepicker-input">
+		<span class="input-group-btn my-timepicker-clock">
+			<button class="btn default " type="button">
+				<i class="fa fa-clock-o"></i>
+			</button>
+		</span>
+	</div>
+</div>
+<script type="text/javascript">
+	jQuery(document).ready(function() {    
+		ComponentsDateTimePickers.init(); 
+		cleanItemValue2("{name}");
+	});	
+</script>

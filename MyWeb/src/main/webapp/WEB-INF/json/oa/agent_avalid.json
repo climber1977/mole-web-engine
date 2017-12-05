@@ -1,0 +1,32 @@
+{
+    "name":"table",
+    "content":"tr_content",
+    "uuid":"agent_avalid",
+    "dataUrl":"agent_avalid?dbs=oa&showColumn=1&subact=sql",
+    "templet":"default_table.html",
+    "displayquery":"inline-block",
+    "displayimport":"none",
+    "displayexport":"inline-block",
+    "child":[       
+        {
+            "th_content":"代理人姓名",
+            "width":"20%",
+            "templet":"default_table_th.html"
+        },
+        {
+            "th_content":"代理人邮箱",
+            "width":"20%",
+            "templet":"default_table_th.html"
+        },        
+        {
+            "th_content":"被代理人姓名",
+            "width":"20%",
+            "templet":"default_table_th.html"
+        },
+        {
+            "th_content":"被代理人邮箱",
+            "width":"20%",
+            "templet":"default_table_th.html"
+        }
+    ]
+}
